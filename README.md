@@ -8,7 +8,7 @@ The project was developed on FastAPI because that was the tool we used for the f
 
 ## Link to the deployed API
 
-The API is deployed in Render in the link: https://ml-backend-project.onrender.com/docs
+The API is deployed in Render in the link: https://ml-backend-project.onrender.com/
 
 The deployed project is the one on the following repository [AlejandroNovellino](https://github.com/AlejandroNovellino/alejandroNovellino-ml-backend-project/tree/main) this is because Render cannot have access to the projects in a Organization (or at least I couldn't connect it).
 
