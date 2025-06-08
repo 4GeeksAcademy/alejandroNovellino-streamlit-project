@@ -2,10 +2,6 @@
 
 This project provides a machine learning API for crop recommendation based on soil and weather features. It includes data exploration notebooks, model training, and a FastAPI-based prediction service.
 
-## **IMPORTANT NOTE**
-
-The project was developed on FastAPI because that was the tool we used for the final project.
-
 ## Link to the deployed API
 
 The API is deployed in Render in the link: https://ml-backend-project.onrender.com/
@@ -14,19 +10,19 @@ The deployed project is the one on the following repository [AlejandroNovellino]
 
 ## Project Structure
 
-- `notebooks/` — Jupyter notebooks for EDA and model training.
-- `models/` — Trained model and encoder files.
-- `api/` — FastAPI app and related code.
-- `requirements-dev.txt` — Python dependencies for development.
-- `requirements.txt` — Python dependencies for deployment.
+- `app.py` — Streamlit app main file
+- `models/` — Trained model and encoder files (`model.pkl`, `encoder.pkl`)
+- `packages/` — DTOs and model wrapper classes
+- `notebooks/` — Jupyter notebooks for EDA and model training
+- `requirements.txt` — Python dependencies
 
 ## Setup
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
-   cd <your-project-directory>
-   ```
+    git clone https://github.com/4GeeksAcademy/alejandroNovellino-streamlit-project.git
+    cd alejandroNovellino-streamlit-project
+    ```
    
 2. **Install dependencies:**
     ```bash
@@ -41,41 +37,14 @@ The deployed project is the one on the following repository [AlejandroNovellino]
     KAGGLEHUB_CACHE=../.
    ```
 
-## Run the API:
-    ```bash
-    # for development
-    fastapi run ./api/main.py --reload
-    
-    # for production
-    uvicorn api.main:app
-    ```
+### Running the App
 
+   ```bash
+   streamlit run app.py
+   ```
 
-
-## API Usage
-
-### Predict Crop values to test
-
-#### Request Body:
-```json
-{
-  "N": 90,
-  "P": 42,
-  "K": 43,
-  "temperature": 20.87974371,
-  "humidity": 82.00274423,
-  "ph": 6.502985292000001,
-  "rainfall": 202.9355362
-}
-```
-
-
-#### Response 
-```json
-{
-  "crop": "rice"
-}
-```
+## Usage
+Enter the required soil and weather parameters in the form. Click "Predict" to get the recommended crop.
 
 ## Notes
 - The model and encoder files must be present in the **models/** directory as model.pkl and encoder.pkl.
