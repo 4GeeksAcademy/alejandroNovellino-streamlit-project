@@ -1,8 +1,5 @@
 joblib
 numpy
 pandas
-python-dotenv
 scikit-learn
-fastapi
-uvicorn
-pydantic
+streamlit

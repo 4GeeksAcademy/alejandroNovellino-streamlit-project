@@ -1,8 +1,4 @@
-from pydantic import BaseModel
-from fastapi import Form
-
-
-class OnePredictionInputDto(BaseModel):
+class OnePredictionInputDto:
     """
     Input DTO features to make a prediction.
     """
@@ -15,21 +11,18 @@ class OnePredictionInputDto(BaseModel):
     ph: float
     rainfall: float
 
-    @classmethod
-    def as_form(
-        cls,
-        n: float = Form(...),
-        p: float = Form(...),
-        k: float = Form(...),
-        temperature: float = Form(...),
-        humidity: float = Form(...),
-        ph: float = Form(...),
-        rainfall: float = Form(...),
-    ):
-        return cls(N=n, P=p, K=k, temperature=temperature, humidity=humidity, ph=ph, rainfall=rainfall)
+    def __init__(self, n: float, p: float, k: float, temperature: float, humidity: float, ph: float, rainfall: float):
+        # call pydantic basemodel constructor
+        self.N=n
+        self.P=p
+        self.K=k
+        self.temperature=temperature
+        self.humidity=humidity
+        self.ph=ph
+        self.rainfall=rainfall
 
 
-class OnePredictionOutputDto(BaseModel):
+class OnePredictionOutputDto:
     """
     Output DTO for one prediction.
     """
@@ -38,4 +31,4 @@ class OnePredictionOutputDto(BaseModel):
 
     def __init__(self, prediction: str):
         # call pydantic basemodel constructor
-        super().__init__(prediction=prediction)
+        self.prediction=prediction
