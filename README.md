@@ -4,9 +4,9 @@ This project provides a machine learning API for crop recommendation based on so
 
 ## Link to the deployed API
 
-The API is deployed in Render in the link: https://ml-backend-project.onrender.com/
+The API is deployed in Render in the link: https://4qwyn4fkgbqwscfwh7vplh.streamlit.app/
 
-The deployed project is the one on the following repository [AlejandroNovellino](https://github.com/AlejandroNovellino/alejandroNovellino-ml-backend-project/tree/main) this is because Render cannot have access to the projects in a Organization (or at least I couldn't connect it).
+The deployed project is the one on the following repository [AlejandroNovellino](https://github.com/AlejandroNovellino/alejandroNovellino-streamlit-project) this is because Render cannot have access to the projects in a Organization (or at least I couldn't connect it).
 
 ## Project Structure
 
@@ -45,6 +45,18 @@ The deployed project is the one on the following repository [AlejandroNovellino]
 
 ## Usage
 Enter the required soil and weather parameters in the form. Click "Predict" to get the recommended crop.
+
+## Example Input
+
+| Feature     | Value |
+|-------------|-------|
+| N           | 90    |
+| P           | 42    |
+| K           | 43    |
+| Temperature | 20.88 |
+| Humidity    | 82    |
+| pH          | 6.5   |
+| Rainfall    | 202.9 |
 
 ## Notes
 - The model and encoder files must be present in the **models/** directory as model.pkl and encoder.pkl.
